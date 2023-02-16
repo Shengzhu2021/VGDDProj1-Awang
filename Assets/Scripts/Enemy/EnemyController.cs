@@ -15,7 +15,13 @@ public class EnemyController : MonoBehaviour
     private float m_HealthPillDropRate;
 
     [SerializeField]
+    private float m_RefillPillDropRate;
+
+    [SerializeField]
     private GameObject m_HealthPill;
+
+    [SerializeField]
+    private GameObject m_RefillPill;
 
     [SerializeField] 
     private float m_speed;
@@ -79,7 +85,10 @@ public class EnemyController : MonoBehaviour
         if (p_curHealth <= 0)
         {
             ScoreManager.singleton.IncreaseScore(m_Score);
-            if (Random.value < m_HealthPillDropRate)
+            if (Random.value < m_RefillPillDropRate)
+            {
+                Instantiate(m_RefillPill, transform.position, Quaternion.identity);
+            } else if (Random.value < m_HealthPillDropRate)
             {
                 Instantiate(m_HealthPill, transform.position, Quaternion.identity);
             }

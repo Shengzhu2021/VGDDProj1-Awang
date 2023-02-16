@@ -373,6 +373,11 @@ MonoBehaviour:
       type: 3}
     m_TimeToNextSpawn: 1
     m_NumberToSpawn: 0
+  - m_Name: GhostEnemy
+    m_EnemyGo: {fileID: 4170465586496341135, guid: 22852da32a2dd1141913d492b0ede3df,
+      type: 3}
+    m_TimeToNextSpawn: 3
+    m_NumberToSpawn: 0
 --- !u!4 &836663561
 Transform:
   m_ObjectHideFlags: 0

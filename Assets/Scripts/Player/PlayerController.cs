@@ -203,6 +203,15 @@ public class PlayerController : MonoBehaviour
         {
             IncreaseHealth(other.GetComponent<HealthPill>().HealthGain);
             Destroy(other.gameObject);
+        } else if (other.CompareTag("Fireball"))
+        {
+            DecreaseHealth(other.GetComponent<ProjectileController>().Damage);
+            Destroy(other.gameObject);
+        } else if (other.CompareTag("RefillPill"))
+        {
+            p_CurHealth = m_MaxHealth;
+            m_HUD.UpdateHealth(1.0f * p_CurHealth / m_MaxHealth);
+            Destroy(other.gameObject);
         }
     }
     #endregion
